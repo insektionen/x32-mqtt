@@ -1,15 +1,25 @@
 package main
 
 import (
+	"encoding/json"
+	"fmt"
 	mqtt "github.com/eclipse/paho.mqtt.golang"
 	"github.com/spf13/viper"
 	"log"
+	"reflect"
+	"strings"
 	"time"
 )
 
 var (
 	mq mqtt.Client
 )
+
+type dataField struct {
+	Type  string `json:"type"`
+	Value any    `json:"value"`
+}
+type mqttPayload []*dataField
 
 func setupMQTTClient() {
 	mqttOptions := mqtt.NewClientOptions()
@@ -39,4 +49,35 @@ func connectionLostHandler(_ mqtt.Client, err error) {
 
 func connectHandler(_ mqtt.Client) {
 	log.Println("MQTT: Connected!")
+	prefix := viper.GetString("mqtt.topic_prefix")
+	topic := fmt.Sprintf("%s%s", prefix, "/set/#")
+	mq.Subscribe(topic, 0, onMessage)
+}
+
+func onMessage(_ mqtt.Client, message mqtt.Message) {
+	parts := strings.Split(message.Topic(), "/")
+	prefixParts := strings.Split(viper.GetString("mqtt.topic_prefix"), "/")
+	parts = parts[len(prefixParts)+1:]
+	res := make(mqttPayload, 0, 2)
+	err := json.Unmarshal(message.Payload(), &res)
+	if err != nil {
+		log.Println("MQTT: Invalid message payload:", err)
+		return
+	}
+	values := make([]any, 0, len(res))
+	for _, p := range res {
+		switch p.Type {
+		case reflect.TypeOf(float32(0)).String():
+			values = append(values, float32(p.Value.(float64)))
+		case reflect.TypeOf("").String():
+			values = append(values, p.Value.(string))
+		}
+	}
+	address := "/" + strings.Join(parts, "/")
+	log.Println(address)
+	err = cli.EmitMessage(address, values...)
+	if err != nil {
+		log.Println("Could not send OSC message:", err)
+		return
+	}
 }

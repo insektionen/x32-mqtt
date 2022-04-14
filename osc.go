@@ -52,12 +52,6 @@ func xremoteSender() {
 	}
 }
 
-type dataField struct {
-	Type  string `json:"type"`
-	Value any    `json:"value"`
-}
-type mqttPayload []*dataField
-
 func oscMessageHandler(msg *gosc.Message) {
 	prefix := viper.GetString("mqtt.topic_prefix")
 	topic := fmt.Sprintf("%s%s", prefix, msg.Address)
