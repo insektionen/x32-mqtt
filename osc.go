@@ -27,11 +27,7 @@ func setupOSCClient() {
 		log.Fatalln("Could not get mixer info:", err)
 	}
 	log.Println("Got info from the OSC server:", info.Arguments)
-	err = cli.HandleMessageFunc("/*", oscMessageHandler)
-	if err != nil {
-		log.Fatalln("Could not register handler:", err)
-	}
-
+	cli.HandleMessageFunc("/*", oscMessageHandler)
 	go xremoteSender()
 }
 
