@@ -63,7 +63,7 @@ func oscMessageHandler(msg *gosc.Message) {
 		})
 	}
 	data, _ := json.Marshal(res)
-	err := mq.Publish(topic, 0, false, data).Error()
+	err := mq.Publish(topic, 0, true, data).Error()
 	if err != nil {
 		log.Println("MQTT: Could not publish:", err)
 	}
