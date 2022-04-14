@@ -4,9 +4,6 @@ This application provides a link between the Behringer X32 Sound-mixer and MQTT
 topics. It uses the OSC protocol to listen for changes on different OSC
 addresses and then publishes the correct values to the MQTT broker.
 
-Future us includes sending MQTT messages to control some mixers functions as
-well.
-
 ## Configuration
 
 Configuration is done using a config file. Either located in `.`
