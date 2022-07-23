@@ -27,7 +27,7 @@ func setupOSCClient() {
 		log.Fatalln("Could not get mixer info:", err)
 	}
 	log.Println("Got info from the OSC server:", info.Arguments)
-	err = cli.HandleMessageFunc("/*", oscMessageHandler)
+	err = cli.ReceiveMessageFunc("/*", oscMessageHandler)
 	if err != nil {
 		log.Fatalln("Could not register handler:", err)
 	}
@@ -41,13 +41,10 @@ func xremoteSender() {
 	if err != nil {
 		log.Println(err)
 	}
-	for {
-		select {
-		case _ = <-ticker.C:
-			err := cli.EmitMessage("/xremote")
-			if err != nil {
-				log.Println(err)
-			}
+	for range ticker.C {
+		err := cli.EmitMessage("/xremote")
+		if err != nil {
+			log.Println(err)
 		}
 	}
 }

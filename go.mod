@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/eclipse/paho.mqtt.golang v1.3.5
-	github.com/loffa/gosc v0.0.0-20220413154249-ec9c145f33af
+	github.com/loffa/gosc v0.0.0-20220723115048-897721d54234
 	github.com/spf13/viper v1.11.0
 )
 
