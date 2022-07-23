@@ -137,6 +137,8 @@ github.com/loffa/gosc v0.0.0-20220413133232-5b830436044d h1:xJrb3v7gL+HwKG+4qaEc
 github.com/loffa/gosc v0.0.0-20220413133232-5b830436044d/go.mod h1:R14JH1s5slLW1QZ8MRdqbmXH3izVG5o3fkm49JUzPFg=
 github.com/loffa/gosc v0.0.0-20220413154249-ec9c145f33af h1:pe9eOOPkAeCOIYKy9jukShFVy9CpOs9vbyluCPg+JdQ=
 github.com/loffa/gosc v0.0.0-20220413154249-ec9c145f33af/go.mod h1:R14JH1s5slLW1QZ8MRdqbmXH3izVG5o3fkm49JUzPFg=
+github.com/loffa/gosc v0.0.0-20220723115048-897721d54234 h1:0mO74YVA+zUSI0yRY6Y3wXdNwXf1mWElGH1+4lpMrPs=
+github.com/loffa/gosc v0.0.0-20220723115048-897721d54234/go.mod h1:R14JH1s5slLW1QZ8MRdqbmXH3izVG5o3fkm49JUzPFg=
 github.com/magiconair/properties v1.8.6 h1:5ibWZ6iY0NctNGWo87LalDlEZ6R41TqbbDamhfG/Qzo=
 github.com/magiconair/properties v1.8.6/go.mod h1:y3VJvCyxH9uVvJTWEGAELF3aiYNyPKd5NZ3oSwXrF60=
 github.com/mitchellh/mapstructure v1.4.3 h1:OVowDSCllw/YjdLkam3/sm7wEtOy59d8ndGgCcyj8cs=
