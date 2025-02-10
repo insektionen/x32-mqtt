@@ -70,7 +70,7 @@ func onMessage(_ mqtt.Client, message mqtt.Message) {
 		case reflect.TypeOf(float32(0)).String():
 			values = append(values, float32(p.Value.(float64)))
 		case reflect.TypeOf(int32(0)).String():
-			values = append(values, p.Value.(int32))
+			values = append(values, int32(p.Value.(float64)))
 		case reflect.TypeOf("").String():
 			values = append(values, p.Value.(string))
 		}
