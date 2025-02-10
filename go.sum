@@ -133,10 +133,6 @@ github.com/kr/pretty v0.1.0/go.mod h1:dAy3ld7l9f0ibDNOQOHHMYYIIbhfbHSm3C4ZsoJORN
 github.com/kr/pty v1.1.1/go.mod h1:pFQYn66WHrOpPYNljwOMqo10TkYh1fy3cYio2l3bCsQ=
 github.com/kr/text v0.1.0 h1:45sCR5RtlFHMR4UwH9sdQ5TC8v0qDQCHnXt+kaKSTVE=
 github.com/kr/text v0.1.0/go.mod h1:4Jbv+DJW3UT/LiOwJeYQe1efqtUx/iVham/4vfdArNI=
-github.com/loffa/gosc v0.0.0-20220413133232-5b830436044d h1:xJrb3v7gL+HwKG+4qaEcHxUpzha66LewiqtrPIcmrf0=
-github.com/loffa/gosc v0.0.0-20220413133232-5b830436044d/go.mod h1:R14JH1s5slLW1QZ8MRdqbmXH3izVG5o3fkm49JUzPFg=
-github.com/loffa/gosc v0.0.0-20220413154249-ec9c145f33af h1:pe9eOOPkAeCOIYKy9jukShFVy9CpOs9vbyluCPg+JdQ=
-github.com/loffa/gosc v0.0.0-20220413154249-ec9c145f33af/go.mod h1:R14JH1s5slLW1QZ8MRdqbmXH3izVG5o3fkm49JUzPFg=
 github.com/loffa/gosc v0.0.0-20220723115048-897721d54234 h1:0mO74YVA+zUSI0yRY6Y3wXdNwXf1mWElGH1+4lpMrPs=
 github.com/loffa/gosc v0.0.0-20220723115048-897721d54234/go.mod h1:R14JH1s5slLW1QZ8MRdqbmXH3izVG5o3fkm49JUzPFg=
 github.com/magiconair/properties v1.8.6 h1:5ibWZ6iY0NctNGWo87LalDlEZ6R41TqbbDamhfG/Qzo=
